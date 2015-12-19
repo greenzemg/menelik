@@ -1,0 +1,36 @@
+html{
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /*background-image: url('/images/tinyd_grid.png');*/
+  background-color: #2f3E6A;
+  background-repeat: repeat;
+  padding-bottom: 60px;
+}
+
+
+/*------------------------------------------------------------------
+[ Footer / $banner ]
+*/
+#footer {
+  /*background-image: url('/images/stressed_linen.png');*/
+  background-color: #293E6A;
+  position: absolute;
+  padding-bottom: 0;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  text-align: center;
+}
+
+#footer .container .text-muted {
+  margin: 20px 0;
+}
+
+#footer > .container {
+  padding-right: 15px;
+  padding-left: 15px;
+}

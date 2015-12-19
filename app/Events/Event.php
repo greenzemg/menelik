@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Events;
+namespace Menelik\Events;
 
 abstract class Event
 {

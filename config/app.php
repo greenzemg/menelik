@@ -140,10 +140,10 @@ return [
         /*
          * Application Service Providers...
          */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
+        Menelik\Providers\AppServiceProvider::class,
+        Menelik\Providers\AuthServiceProvider::class,
+        Menelik\Providers\EventServiceProvider::class,
+        Menelik\Providers\RouteServiceProvider::class,
  
         /*
         *  Third Party Service Providers...
