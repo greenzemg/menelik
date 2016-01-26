@@ -17,6 +17,7 @@ class PasswordController extends Controller
      */
     public function __construct()
     {
+        $this->redirectPath = route('user.dashboard.index');
         $this->middleware('guest');
     }
 }

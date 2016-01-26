@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use Menelik\Http\Requests;
 
+use Gate;
+
 class HomeController extends Controller
 {
     /**
@@ -15,7 +17,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-    	$title = "Welcome Home page";
+        $title = "Welcome Home page";
         return view('pages.home.index', compact('title'));
     }
 

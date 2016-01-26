@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-use Menelik\Models\User;
+use Menelik\User;
 
 class UsersTableSeeder extends Seeder
 {

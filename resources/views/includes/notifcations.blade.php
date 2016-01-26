@@ -3,9 +3,9 @@
     <div class="alert alert-danger alert-block">
     	<button type="button" class="close" data-dismiss="alert">&times;</button>
     	<h4>Error count</h4>
-    	Please check the form below for errors
     </div>
 @endif 
+
 @if ($message = Session::get('success'))
 <div class="alert alert-success alert-block">
 	<button type="button" class="close" data-dismiss="alert">&times;</button>
@@ -19,13 +19,15 @@
     @endif
 </div>
 @endif
+
 @if ($message = Session::get('error')) <!-- error -->
 <div class="alert alert-danger alert-block">
 	<button type="button" class="close" data-dismiss="alert">&times;</button>
-	<h4>Error and Error</h4>
+	<h4>Error</h4>
     @if(is_array($message))
-        @foreach($errors->all() as $error)
-                <li>{{ $error }}</li>
+        @foreach ($message as $m)
+                {{ $m }}
+                
         @endforeach
     @else
         {{ $message }}

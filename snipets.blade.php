@@ -27,3 +27,22 @@ active background
 0F0B42, 231E60, 3D387C, 5F5B9A, 8A87B8
 
 #8184B, #565B95, #343977, #1A1F5A, #090D3C
+
+ <div class="container-fluid" id={{ Auth::guest()?"guest-welcome-view":"memeber-welcome-view" }}>
+ 	<div class="row">
+ 		<div class="col-md-6" id="motto">
+	        <h1><strong>Menelik Question Bank</strong></h1>
+	        <p><strong>Aweb Application for a Repositoring (storing) Ethiopian National Exam and Model Question paper on cloude</strong></p>
+	        
+	        <p>powered by realPower</p>
+	    </div>
+	    @if(Auth::guest())
+	    <div class="col-md-6" id="home-login-form">
+	        {!! Form::open(['url' => 'auth/login', 'class' => 'form-horizontal']) !!}
+	            @include('pages.includes.errors')
+	            @include("pages.partials.loginform")
+	        {!! Form::close()!!}
+	    </div>
+	    @endif
+ 	</div>
+ </div>

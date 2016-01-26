@@ -10,8 +10,8 @@
 {!! Html::style('/css/butstrp_Cmpld/css/bootstrap.min.css') !!}
 {!! Html::style('/css/butstrp_Cmpld/css/bootstrap-theme.min.css') !!}
 <!-- Custome Appliction css -->
-{!! Html::style('/css/custom_navbar.css')!!}
-{!! Html::style('/css/dashboard.css') !!}
+{!! Html::style('/css/app/global.css') !!}
+{!! Html::style('/css/app/user.css') !!}
 @yield('styles')
 @yield('head')
 </head>

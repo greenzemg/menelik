@@ -30,9 +30,7 @@
 <div class="form-group">
     <div class="col-md-12 control">
         <div style="border-top: 2px solid#888; padding-top:15px; font-size:125%" >Don't have an account!<br/>
-        	<a href="#" onClick="$('#loginbox').hide(); $('#signupbox').show()"><button type="button" class="btn btn-warning">Login as Guest</button></a>
-        	or
-        	<a href="#" onClick="$('#loginbox').hide(); $('#signupbox').show()"><button type="button" class="btn btn-success">Register Here</button></a>
+        	<a href="{{route('get.register')}}"><button type="button" class="btn btn-success">Register Here</button></a>
         </div>
     </div>
 </div>    

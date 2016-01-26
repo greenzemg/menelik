@@ -11,4 +11,11 @@ abstract class BackendController extends BaseController
     {
     	$this->middleware('auth');
     }
+
+    public function getIndex()
+   {
+        $title = 'Backend DashBoard';
+        return view('backend.dashboard.index', compact('title'));
+   }
+
 }

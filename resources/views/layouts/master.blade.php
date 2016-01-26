@@ -2,29 +2,42 @@
 <html lang="en">
 @include('includes.head')
 <body>
+
 @section('navbarhead')
 <!-- navbar -->
 @include('includes.navbar')		
-<!-- ./ mainnav -->
+<!-- ./ navbar -->
 @show
+
+<!-- mainnav -->
 @section('mainnav')
 @if(Auth::check())
-<!-- navbar -->
 @include('includes.mainnav')		
-<!-- ./ mainnav -->
 @endif	
 @show
+<!-- ./ mainnav -->
+
 <!-- Notifications -->
+@section('notifcation')
 @include('includes.notifcations')
+@show
 <!-- ./ notifications -->
 
-<!-- mainbody -->
-@section('mainbody')
-@yield('leftsidenav')
-@yield('centerview')
-@yield('rightsideview')
-@show
-<!-- ./ mainbody -->
+<div id="wrap">
+	<div class="container-fluid">
+		<div class="row">
+			<!-- mainbody -->
+			@section('mainbody')
+				
+				@yield('leftsideview')
+				@yield('centerview')
+				@yield('rightsideview')
+			@show
+			<!-- ./ mainbody -->
+		</div>
+	</div>
+</div>
+
 
 @section('footer')
 @include('includes.footer')

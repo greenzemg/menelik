@@ -29,5 +29,6 @@ class Kernel extends HttpKernel
         'auth' => \Menelik\Http\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'guest' => \Menelik\Http\Middleware\RedirectIfAuthenticated::class,
+        'backend' => \Menelik\Http\Middleware\Backend::class,
     ];
 }

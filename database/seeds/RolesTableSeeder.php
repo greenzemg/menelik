@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-use Menelik\Models\Role;
+use Menelik\Role;
 
 class RolesTableSeeder extends Seeder
 {

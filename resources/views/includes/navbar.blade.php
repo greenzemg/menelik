@@ -10,10 +10,9 @@
             </div>    
         </div>       
     </div>
-
 @else
-<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
-  <div class="container-fluid">
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -31,8 +30,8 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
+            <li><a href="{{route('user.profile.show', Auth::user()->id) }}">Profile</a></li>
+            <li><a href="{{route('user.profile.edit', Auth::user()->id) }}">Settings</a></li>
             <li><a href="#">Something else here</a></li>
             <li class="divider"></li>
             <li><a href="#">Separated link</a></li>
@@ -41,20 +40,14 @@
           </ul>
         </li>
       </ul>
-      <form class="navbar-form navbar-right " role="search">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
-        </div>
-        <button type="submit" class="btn btn-default">Search</button>
-      </form>
       <ul class="nav navbar-nav navbar-right">
         @if(Auth::guest())
-            <li {{ (Request::is('login') ? ' class="active"' : '') }}><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-            <li{{ (Request::is('users/register') ? ' class="active"' : '') }}><a href="#"><span class="glyphicon glyphicon-registration-mark"></span> Registration</a></li>   
+            <li {!! (Request::is('login') ? ' class="active"' : '') !!}><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            <li {!! (Request::is('users/register') ? ' class="active"' : '') !!}><a href="#"><span class="glyphicon glyphicon-registration-mark"></span> Registration</a></li>   
         @else
-            <li><a href="#"><span class="glyphicon glyphicon-user">({{Auth::user()->username}})<span></a></li>                
+            <li {!! (Request::is('user/profile/*') ? ' class="active"' : '') !!}><a href="{{route('user.profile.show', Auth::user()->id) }}"><span class="glyphicon glyphicon-user">({{Auth::user()->username}})<span></a></li>                
             <li><a href="{{ route('get.logout') }}"><span class="glyphicon glyphicon-log-out">Logout<span></a></li>
-            <li class="active"><a href="{{ route('dash.index') }}"><span class="glyphicon glyphicon-home">Dasheboard<span></a></li>
+            <li {!! (Request::is('user/dashboard') ? ' class="active"' : '') !!}><a href="{{ route('user.dashboard.index') }}"><span class="glyphicon glyphicon-home">Dasheboard<span></a></li>
         @endif
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">help <b class="caret"></b></a>
@@ -67,7 +60,18 @@
           </ul>
         </li>
       </ul>
+      <div id="search" class="">
+          {!! Form::open(['route'=>'home', 'class'=>'navbar-form navbar-left', 'role'=>'search']) !!}
+
+              {!! Form::token() !!}
+
+              <div class="form-group">
+                  {!! Form::text('keyword', 'Search', array('class'=>'form-control', 'required' =>'required',  'placeholder'=>'search', 'id'=>'keyword')) !!}
+                  {!! Form::submit('Search', ['class' =>'btn btn-default form-control']) !!}
+              </div>
+          {!! Form::close()!!}
+      </div> <!-- end of seach -->
     </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
+  </div><!-- /.container -->
 </nav>
 @endif

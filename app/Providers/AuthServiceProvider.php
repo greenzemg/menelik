@@ -26,6 +26,12 @@ class AuthServiceProvider extends ServiceProvider
     {
         parent::registerPolicies($gate);
 
-        //
+        $gate->define('editProfileGate', function($user, $profile){
+            return $user->id == $profile->user_id;
+        });
+
+        $gate->define('updateProfileGate', function($user, $profile){
+            return $user->id == $profile->user_id;
+        });
     }
 }

@@ -1,0 +1,36 @@
+html{
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /*background-image: url('/images/tinyd_grid.png');*/
+  background-color: #FDFDFD;
+  padding-bottom: 60px;
+}
+
+
+
+/*------------------------------------------------------------------
+[ Footer / $banner ]
+*/
+#footer {
+  /*background-image: url('/images/stressed_linen.png');*/
+  position: absolute;
+  padding-bottom: 0;
+  margin-bottom: 0px;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  text-align: center;
+  background-color: #08172A;
+}
+
+#footer .container .text-muted {
+  margin: 20px 0;
+}
+
+#footer > .container {
+  padding-right: 15px;
+  padding-left: 15px;
+}
